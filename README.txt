@@ -1,4 +1,5 @@
-# Project Clairity
+## Important Notice
 
-### A CMPS project focuses on improving air quality in the Houston area by researching pollution sources and forecasting methods, 
-and using that knowledge to raise awareness and promote healthier living.
+### The team that has been maintaining Gym since 2021 has moved all future development to [Gymnasium](https://github.com/Farama-Foundation/Gymnasium), a drop in replacement for Gym (import gymnasium as gym), and Gym will not be receiving any future updates. Please switch over to Gymnasium as soon as you're able to do so. If you'd like to read more about the story behind this switch, please check out [this blog post](https://farama.org/Announcing-The-Farama-Foundation).
+
+## Gym
