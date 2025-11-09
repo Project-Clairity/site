@@ -54,7 +54,7 @@
 								<header class="major">
 									<span class="date">April 25, 2017</span>
 									<h2><a href="#">WE ARE</a></h2>
-									<p>We’re a group of high school students from Pearland, Texas, passionate about creating a cleaner, healthier future for our community. Our project, CLAIRITY, focuses on raising awareness about air pollution and its impact on youth health. We aim to empower teens ages 10–18 to understand air quality issues, make informed choices, and take small actions that lead to big changes within the community. From workshops to digital outreach, we’re working to clear the air and inspire others to do the same.  Join us in taking a stand for cleaner air! Follow our journey, share our message, and help us make Pearland a healthier place changing one breath at a time</p>
+									<p>a group of high school students from Pearland, Texas, passionate about creating a cleaner, healthier future for our community. Our project, CLAIRITY, focuses on raising awareness about air pollution and its impact on youth health. We aim to empower teens ages 10–18 to understand air quality issues, make informed choices, and take small actions that lead to big changes within the community. From workshops to digital outreach, we’re working to clear the air and inspire others to do the same.  Join us in taking a stand for cleaner air! Follow our journey, share our message, and help us make Pearland a healthier place changing one breath at a time</p>
 								</header>
 								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
 								<ul class="actions special">
@@ -181,16 +181,12 @@
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p>2050 Cullen Blvd<br />
+								Pearland, TX 77581</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p><a href="#">projectclairity25@outlook.com</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
@@ -219,6 +215,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+			<script>
+			(function(){
+				emailjs.init("BVSxsJfbZQEbrEgVa");
+			})();
+			</script>
+			<script>
+			document.querySelector('form').addEventListener('submit', function(event) {
+				event.preventDefault(); // Prevent default form submission
+
+				emailjs.sendForm('service_v1bfcfd', 'template_5pza0es', this)
+				.then(function() {
+					alert('Message sent successfully!');
+					// Optionally clear the form
+					document.getElementById('name').value = '';
+					document.getElementById('email').value = '';
+					document.getElementById('message').value = '';
+				}, function(error) {
+					alert('Failed to send message: ' + JSON.stringify(error));
+				});
+			});
+			</script>
 
 	</body>
 </html>
