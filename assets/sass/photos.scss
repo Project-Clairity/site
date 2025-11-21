@@ -1,0 +1,222 @@
+
+body {
+
+  margin: 0;
+  padding: 0;
+  background: #2196f360;
+  background: #000;
+
+  .thumbs {
+    position: absolute;
+    z-index: 20000000000000000000;
+    bottom: 2vmin;
+    width: 90vw;
+    text-align: center;
+    left: 5vw;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    label {
+      border: 1px solid #fff8;
+      border-radius: 5px;
+      min-width: 10vmin;
+      aspect-ratio: 4/3;
+      display: inline-flex;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+      cursor: pointer;    
+      opacity: 1;
+      position: relative;
+      &:hover {
+        opacity: 0.8;
+        box-shadow: 0 0 0 2px #fff;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        border-radius: 100%;
+        background: #5387b0;
+        top: 4px; 
+        right: 4px;
+        border: 1px solid #fff9;
+      }
+      input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      &:has(input:checked) {
+        box-shadow: 0 0 0 3px #fff;
+        transition: all 0.25s ease 0s;
+        opacity: 1 !important;
+        &::after {
+          content: "";
+          position: absolute;
+          border: 2px solid #fff;
+          width: 6px;
+          height: 4px;
+          right: 9px;
+          top: 9px;
+          border-width: 0 0 3px 3px;
+          border-radius: 1px;
+          transform: rotate(-45deg);
+        }
+      }
+      &:has(#uno) {
+        background-image: url(https://fastly.picsum.photos/id/29/160/120.jpg?hmac=TqPU_KMQFNogaISDCaOFABrwCipkwRK-FVmSjUSnL2w);
+      }
+      &:has(#dos) {
+        background-image: url(https://fastly.picsum.photos/id/814/160/120.jpg?hmac=Kdw8gH7kYKR_E4p1tlQzQxxzs0jT8RkhX_s0C_siBJA);
+      }
+      &:has(#tres) {
+        background-image: url(https://fastly.picsum.photos/id/830/160/120.jpg?hmac=Vb3oSP9EslXBZ1P4p4vmOahGW6gtyydICunAo7n6wFA);
+      }
+      &:has(#cuatro) {
+        background-image: url(https://fastly.picsum.photos/id/961/160/120.jpg?hmac=LwoRY4D4APZefqcU2tNyv0Pb2bfW8iFI9GtBD-TfiA8);
+      }
+      &:has(#cinco) {
+        background-image: url(https://fastly.picsum.photos/id/906/160/120.jpg?hmac=8fm3bNul1LWk9od1guXAtqrotKpQv0v3vlxZbvghwU8);
+      }
+      &:has(#seis) {
+        background-image: url(https://fastly.picsum.photos/id/902/160/120.jpg?hmac=TbkMn3mNcKtdcAKnMJnWp-HGdT0p8Lyw3Rl4AazoldE);
+      }
+      &:has(#siete) {
+        background-image: url(https://fastly.picsum.photos/id/984/160/120.jpg?hmac=YjJUhEIl38DyVwEvjfh3CEB0JPi9OP_8cyzVYxFHQt8);
+      }
+    }
+  }
+
+
+  &:has(input#uno:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/29/1200/600.jpg?hmac=SWhEfW0RM6uNMFW6VJVdmL6fMRpsLD48nNQoLRVROFU);
+  }
+  &:has(input#dos:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/814/1200/600.jpg?hmac=-LzrLKO7FAaFtVy5hozAgmgqbH2bV4eBoNWy9NmeRoc);
+  }
+  &:has(input#tres:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/830/1200/600.jpg?hmac=TvcILSeuL4jK1_OQG08ZathkJ1SwqdidlQVwapaF-e8);
+  }
+  &:has(input#cuatro:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/961/1200/600.jpg?hmac=-7W-CrsQiPQzXpAvw0MT_xSZFAEukp4QXrfSYZrseig), url(https://fastly.picsum.photos/id/961/600/300.jpg?hmac=3hSfv5Sj3oZZ4oq3O29qbcU__VT6GibR43PZUbrewtI);
+  }
+  &:has(input#cinco:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/906/1200/600.jpg?hmac=W44aIOqjC5YVPcHtKp-VyptppkVTymmPbs1J8Hn6zws);
+  }
+  &:has(input#seis:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/902/1201/600.jpg?hmac=g_hNRT0OTdGni1YAqqB47ECcsYJuYRsFbKvEvxgniI0);
+  }
+  &:has(input#siete:checked) .contenedor {
+    --bg: url(https://fastly.picsum.photos/id/984/1200/600.jpg?hmac=P09FKenA5KpXXTjGa04J2ge51TwmQDz8-xXjY6jBumM);
+  }
+
+  .progressive-blur {
+    top: calc(50vh - 1px) !important;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    z-index: 20;
+    inset: auto 0 0 0;
+    height: 50vh;
+    width: 100%;
+    pointer-events: none;
+    transform: rotate(0deg);
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+    &:after,
+    &:before,
+    &>div {
+      background-color: #2196f35e; 
+      background-color: #4082b778;
+      position: absolute;
+      inset: 0;
+    }
+    &:before {
+      content: "";
+      z-index: 1;
+      -webkit-backdrop-filter: blur(0.5px);
+      backdrop-filter: blur(0.5px);
+      -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 0%,rgb(26,26,26) 12.5%,rgb(26,26,26) 25%,rgba(26,26,26,0) 37.5%);
+      mask: linear-gradient(to bottom,rgba(26,26,26,0) 0%,rgb(26,26,26) 12.5%,rgb(26,26,26) 25%,rgba(26,26,26,0) 37.5%);
+    }
+    &>div {
+      &:first-of-type {
+        z-index: 2;
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 12.5%,rgb(26,26,26) 25%,rgb(26,26,26) 37.5%,rgba(26,26,26,0) 50%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 12.5%,rgb(26,26,26) 25%,rgb(26,26,26) 37.5%,rgba(26,26,26,0) 50%)
+      }
+      &:nth-of-type(2) {
+        z-index: 3;
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 25%,rgb(26,26,26) 37.5%,rgb(26,26,26) 50%,rgba(26,26,26,0) 62.5%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 25%,rgb(26,26,26) 37.5%,rgb(26,26,26) 50%,rgba(26,26,26,0) 62.5%)
+      }
+      &:nth-of-type(3) {
+        z-index: 4;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 37.5%,rgb(26,26,26) 50%,rgb(26,26,26) 62.5%,rgba(26,26,26,0) 75%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 37.5%,rgb(26,26,26) 50%,rgb(26,26,26) 62.5%,rgba(26,26,26,0) 75%)
+      }
+      &:nth-of-type(4) {
+        z-index: 5;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 50%,rgb(26,26,26) 62.5%,rgb(26,26,26) 75%,rgba(26,26,26,0) 87.5%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 50%,rgb(26,26,26) 62.5%,rgb(26,26,26) 75%,rgba(26,26,26,0) 87.5%)
+      }
+      &:nth-of-type(5) {
+        z-index: 6;
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 62.5%,rgb(26,26,26) 75%,rgb(26,26,26) 87.5%,rgba(26,26,26,0) 100%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 62.5%,rgb(26,26,26) 75%,rgb(26,26,26) 87.5%,rgba(26,26,26,0) 100%)
+      }
+      &:nth-of-type(6) {
+        z-index: 7;
+        -webkit-backdrop-filter: blur(32px);
+        backdrop-filter: blur(32px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 75%,rgb(26,26,26) 87.5%,rgb(26,26,26) 100%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 75%,rgb(26,26,26) 87.5%,rgb(26,26,26) 100%)
+      }
+      &:after {
+        content: "";
+        z-index: 8;
+        -webkit-backdrop-filter: blur(64px);
+        backdrop-filter: blur(64px);
+        -webkit-mask: linear-gradient(to bottom,rgba(26,26,26,0) 87.5%,rgb(26,26,26) 100%);
+        mask: linear-gradient(to bottom,rgba(26,26,26,0) 87.5%,rgb(26,26,26) 100%)
+      }
+    }
+  }
+
+  .contenedor {
+    position: fixed;
+    background: var(--bg) no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    padding-top: 50vh;
+    -webkit-transition: padding 0.735s ease, -webkit-transform 0.735s ease;
+    transition: transform 0.735s ease, padding 0.735s ease, -webkit-transform 0.735s ease;
+    z-index: 10;
+    &:after {
+      top: calc(50vh + 1px) !important;
+      content: "";
+      position: absolute;
+      background: var(--bg) no-repeat center top;
+      background-size: cover;
+      width: 100%;
+      padding-top: 50vh;
+      transform: rotateX(180deg);
+      -webkit-transition: padding 0.735s ease, -webkit-transform 0.735s ease;
+      transition: transform 0.735s ease, padding 0.735s ease, -webkit-transform 0.735s ease;
+    }
+  }
+
+}
