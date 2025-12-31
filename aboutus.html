@@ -37,23 +37,43 @@
 				<!-- Main -->
 					 <div id="main">
 
-									<div class="box alt">
-										<div class="row gtr-50 gtr-50">
+						<section class="carousel-wrapper">
+							<div class="carousel">
+								<button class="carousel-btn prev" onclick="prevSlide()">&#8249;</button>
+								<button class="carousel-btn next" onclick="nextSlide()">&#8250;</button>
 
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic02.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic03.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic04.jpg" alt=""></span></a></div>
+								<div class="slide active">
+								<img src="images/SelfPhotos/MeetHarshilAradhya.png" alt="Slide 1">
+								</div>
 
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic04.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic02.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic03.jpg" alt=""></span></a></div>
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetAndrewNguyen.png" alt="Slide 2">
+								</div>
 
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic03.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic04.jpg" alt=""></span></a></div>
-											<div class="col-4"><a href="#"><span class="image fit"><img src="images/pic02.jpg" alt=""></span></a></div>
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetRexfordPan.png" alt="Slide 3">
+								</div>
 
-										</div>
-									</div>
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetSimonRobin.png" alt="Slide 3">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetGavinSong.png" alt="Slide 3">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetWyattYin.png" alt="Slide 3">
+								</div>
+								
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetRoyZheng.png" alt="Slide 3">
+								</div>
+							</div>
+
+							
+						</section>
+
 					</div>
 				<!-- Footer -->
 					<footer id="footer">
@@ -100,6 +120,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				let current = 0;
+				const slides = document.querySelectorAll('.slide');
+
+				function updateSlides() {
+					slides.forEach(slide => {
+					slide.classList.remove('active', 'prev', 'next');
+					});
+
+					slides[current].classList.add('active');
+
+					const prev = (current - 1 + slides.length) % slides.length;
+					const next = (current + 1) % slides.length;
+
+					slides[prev].classList.add('prev');
+					slides[next].classList.add('next');
+				}
+
+				function nextSlide() {
+					current = (current + 1) % slides.length;
+					updateSlides();
+				}
+
+				function prevSlide() {
+					current = (current - 1 + slides.length) % slides.length;
+					updateSlides();
+				}
+
+				updateSlides();
+				</script>
 
 	</body>
 </html>

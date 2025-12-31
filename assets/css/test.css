@@ -4880,7 +4880,7 @@ input, select, textarea {
 
 .carousel {
   position: relative;
-  height: 700px;
+  height: 420px;
 }
 
 .slide {
@@ -4948,8 +4948,8 @@ input, select, textarea {
 
 .carousel-btn {
   all: unset; /* ← this is the key */
-  position: absolute;
-  top: 55%;
+  position: relative;
+  top: 50%;
   transform: translateY(-50%);
 
   width: 48px;
@@ -4973,12 +4973,12 @@ input, select, textarea {
 
 /* Positioning */
 .carousel-btn.prev {
-  left: 90px; /* pulls slightly outside card edge */
+  left: -24px; /* pulls slightly outside card edge */
   
 }
 
 .carousel-btn.next {
-  right: 90px;
+  right: -24px;
 }
 
 /* Hover effect */
@@ -4994,7 +4994,6 @@ input, select, textarea {
   }
 
   .carousel-btn.next {
-    right: 50px;
+    right: -455px;
   }
 }
-
