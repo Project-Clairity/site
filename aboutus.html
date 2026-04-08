@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Photos Page - Project Clairity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="main.html" class="logo">Clairity</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="main.html">Home</a></li>
+							<li class="active"><a href="aboutus.html">About Our Team</a></li>
+							<li><a href="blogs.html">Blogs</a></li>
+						</ul>
+						<ul class="icons">
+								<li><a href="https://www.instagram.com/project_clairity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/Project-Clairity/site" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>						</ul>
+					</nav>
+
+				<!-- Main -->
+					 <div id="main">
+
+						<section class="carousel-wrapper">
+							<div class="carousel">
+								<button class="carousel-btn prev" onclick="prevSlide()">&#8249;</button>
+								<button class="carousel-btn next" onclick="nextSlide()">&#8250;</button>
+
+								<div class="slide active">
+								<img src="images/SelfPhotos/MeetHarshilAradhya.png" alt="Slide 1">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetAndrewNguyen.png" alt="Slide 2">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetRexfordPan.png" alt="Slide 3">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetSimonRobin.png" alt="Slide 3">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetGavinSong.png" alt="Slide 3">
+								</div>
+
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetWyattYin.png" alt="Slide 3">
+								</div>
+								
+								<div class="slide">
+								<img src="images/SelfPhotos/MeetRoyZheng.png" alt="Slide 3">
+								</div>
+							</div>
+
+							
+						</section>
+
+					</div>
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<div class="ms-form-container">
+								<iframe
+									src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAApgMjdpUNjI2TVQ0OUFONFVNV0tTR1FMQTcyMEVTSi4u&embed=true"
+									loading="lazy"
+									allowfullscreen
+									webkitallowfullscreen
+									mozallowfullscreen
+									msallowfullscreen>
+								</iframe>
+							</div>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Glenda Dawson 2050 Cullen Blvd<br />
+								Pearland, TX 77581</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">projectclairity25@outlook.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.instagram.com/project_clairity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/Project-Clairity/site" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>								</ul>
+							</section>
+						</section>
+					</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				let current = 0;
+				const slides = document.querySelectorAll('.slide');
+
+				function updateSlides() {
+					slides.forEach(slide => {
+					slide.classList.remove('active', 'prev', 'next');
+					});
+
+					slides[current].classList.add('active');
+
+					const prev = (current - 1 + slides.length) % slides.length;
+					const next = (current + 1) % slides.length;
+
+					slides[prev].classList.add('prev');
+					slides[next].classList.add('next');
+				}
+
+				function nextSlide() {
+					current = (current + 1) % slides.length;
+					updateSlides();
+				}
+
+				function prevSlide() {
+					current = (current - 1 + slides.length) % slides.length;
+					updateSlides();
+				}
+
+				updateSlides();
+				</script>
+
+	</body>
+</html>

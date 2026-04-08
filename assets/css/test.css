@@ -4869,132 +4869,52 @@ input, select, textarea {
   overflow: hidden;
 }
 
-/* ===== Center Peek Carousel ===== */
-
-.carousel-wrapper {
+.stacked-slideshow {
   position: relative;
-  max-width: 900px;
-  margin: 4rem auto;
-  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.carousel {
+.stack {
   position: relative;
-  height: 700px;
+  height: 460px;
 }
 
-.slide {
+.card {
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 70%;
-  height: 100%;
-  transform: translateX(-50%);
-  opacity: 0;
-  z-index: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.slide img {
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+
+  border-radius: 12px;
+
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 1;
 }
 
-/* Center slide */
-.slide.active {
+/* CENTER (active) */
+.card.active {
   opacity: 1;
+  transform: scale(1);
   z-index: 3;
 }
 
-/* Left peek */
-.slide.prev {
-  opacity: 0.5;
-  transform: translateX(-60%);
+/* LEFT EDGE */
+.card.left {
+  opacity: 0.35;
+  transform: translateX(-18px) scale(0.97);
   z-index: 2;
 }
 
-/* Right peek */
-.slide.next {
-  opacity: 0.5;
-  transform: translateX(-40%);
+/* RIGHT EDGE */
+.card.right {
+  opacity: 0.35;
+  transform: translateX(18px) scale(0.97);
   z-index: 2;
 }
-
-/* Controls (Massively-style minimal buttons) */
-.carousel-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
-.carousel-controls button {
-  background: none;
-  border: solid 2px #ccc;
-  color: #555;
-  font-size: 1.5rem;
-  padding: 0.3rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.carousel-controls button:hover {
-  border-color: #000;
-  color: #000;
-}
-
-/* ===== Carousel Nav Buttons ===== */
-
-.carousel-btn {
-  all: unset; /* ← this is the key */
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.6);
-  color: #222;
-  font-size: 28px;
-  font-weight: 600;
-  cursor: pointer;
-  z-index: 20;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-
-/* Positioning */
-.carousel-btn.prev {
-  left: 90px; /* pulls slightly outside card edge */
-  
-}
-
-.carousel-btn.next {
-  right: 90px;
-}
-
-/* Hover effect */
-.carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: translateY(-50%) scale(1.1);
-}
-
-/* Mobile adjustment */
-@media (max-width: 768px) {
-  .carousel-btn.prev {
-    left: 50px;
-  }
-
-  .carousel-btn.next {
-    right: 50px;
-  }
-}
-
